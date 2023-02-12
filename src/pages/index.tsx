@@ -15,9 +15,7 @@ const homeData = {
 export default function Home() {
   return (
     <>
-      <Head>
-      <title>HERMTAC</title>
-      </Head>
+
       <Layout>
         <div className="edrea_tm_section animated" id="home">
           <div className="section_inner">

@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { Waves } from "../waves";
 import Header from "./Header";
 import MobileHeader from "./MobileHeader";
-
+import Head from "next/head";
 // import Mouse from "./Mouse";
 // import PreLoader from "./PreLoader";
 
@@ -22,6 +22,9 @@ const Layout = ({ children }) => {
 	return (
 		// <State>
 		<>
+			<Head>
+				<title>HERMTAC</title>
+			</Head>
 			{/* <PreLoader />
 			<ImageView />
 			<VideoPopup /> */}
