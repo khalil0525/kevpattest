@@ -1,7 +1,7 @@
 import { Fragment, useContext, useState } from "react";
 // import { context } from "../context/context";
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 const MobileHeader = () => {
 	const [toggle, setToggle] = useState(false);
 	// const navContext = useContext(context);
@@ -13,6 +13,7 @@ const MobileHeader = () => {
 	// 	changeNav(value);
 	// };
 
+	const router = useRouter();
 	return (
 		<>
 			<div className="edrea_tm_topbar">
@@ -43,36 +44,36 @@ const MobileHeader = () => {
 				<div className="inner">
 					<div className="menu_list">
 						<ul className="transition_link">
-							{/* <li className={activeNav("home")}> */}
-                            <li>
-								<Link href="/">
-									Home
-								</Link>
-							</li>
-							{/* <li className={activeNav("about")}> */}
-                            <li>
-								<Link href="/about">
-									About
-								</Link>
-							</li>
-							{/* <li className={activeNav("portfolio")}> */}
-                            <li>
-								<Link href="/portfolio">
-								Portfoli
-								</Link>
-							</li>
-							{/* <li className={activeNav("news")}> */}
-                            <li>
-								<Link href="/news">
-								New
-								</Link>
-							</li>
-							{/* <li className={activeNav("contact")}> */}
-                            <li>
-								<Link href="/contact">
-									Contact
-								</Link>
-							</li>
+						<li className={router.asPath == "/" ? "active" : ""}>
+						
+							<Link href="/">
+								Home
+							</Link>
+						</li>
+						<li className={router.asPath == "/about" ? "active" : ""}>
+					
+							<Link href="/about">
+								About
+							</Link>
+						</li>
+						<li className={router.asPath == "/portfolio" ? "active" : ""}>
+					
+							<Link href="/portfolio">
+								Portfolio
+							</Link>
+						</li>
+						<li className={router.asPath == "/new" ? "active" : ""}>
+					
+							<Link href="/news">
+								News
+							</Link>
+						</li>
+						<li className={router.asPath == "/contact" ? "active" : ""}>
+					
+							<Link href="/contact">
+								Contact
+							</Link>
+						</li>
 						</ul>
 					</div>
 				</div>

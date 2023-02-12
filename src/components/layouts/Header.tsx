@@ -1,5 +1,6 @@
 // import { useContext } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 // import { context } from "../context/context";
 
@@ -8,7 +9,7 @@ const Header = () => {
 	// const { nav, changeNav } = navContext;
 
 	// const activeNav = (value) => (value == nav ? "active" : "");
-
+	const router = useRouter();
 	return (
 		<div className="edrea_tm_header">
 			<div className="header_inner">
@@ -25,32 +26,32 @@ const Header = () => {
 				</div>
 				<div className="menu">
 					<ul className="transition_link">
-						{/* <li className={activeNav("home")}> */}
-						<li>
+						<li className={router.asPath == "/" ? "active" : ""}>
+						
 							<Link href="/">
 								Home
 							</Link>
 						</li>
-						{/* <li className={activeNav("about")}> */}
-						<li>
+						<li className={router.asPath == "/about" ? "active" : ""}>
+					
 							<Link href="/about">
 								About
 							</Link>
 						</li>
-						{/* <li className={activeNav("portfolio")}> */}
-						<li>
+						<li className={router.asPath == "/portfolio" ? "active" : ""}>
+					
 							<Link href="/portfolio">
 								Portfolio
 							</Link>
 						</li>
-						{/* <li className={activeNav("news")}> */}
-						<li>
+						<li className={router.asPath == "/new" ? "active" : ""}>
+					
 							<Link href="/news">
 								News
 							</Link>
 						</li>
-						{/* <li className={activeNav("contact")}> */}
-						<li>
+						<li className={router.asPath == "/contact" ? "active" : ""}>
+					
 							<Link href="/contact">
 								Contact
 							</Link>
